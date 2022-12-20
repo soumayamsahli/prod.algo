@@ -1,0 +1,48 @@
+FUNCTION dot_product (v1 , v2 : ARRAY_OF INTEGER [10];) : INTEGER
+VAR
+    i , dot :INTEGER
+BEGIN
+    dot := 0
+    i := 0
+
+    IF (v1.length <> v2.length) THEN
+        write ("vectors with diff size ! we cannot calc the prod")
+        dot := NAN
+    END_IF
+
+    while (i< v1.length){
+        dot := dot + v1[i] * v2[i]
+        i++ 
+    }
+
+    RETURN dot ;
+END
+
+
+ALGORITHM wji3et_RAS
+VAR
+    v1 ,v2 : ARRAY_OF INTEGER [10]
+    i : INTEGER
+    dot : INTEGER
+BEGIN
+    FOR i FROM 0 TO v1.length STEP step 1  DO
+        write (" enter element of " i+1 )
+        read (v1[i])
+    END_FOR 
+
+    FOR i FROM 0 TO v2.length STEP step 1  DO
+        write (" enter element of " i+1 )
+        read (v2[i])
+    END_FOR
+
+    dot := dot_product(v1 , v2)
+    
+    IF (dot := 0) THEN
+        write("v1 et v2 sont orth")
+    ELSE
+        write ("v1 et v2 mahhhhhhhoooooooomch orth ")
+    END_IF
+
+
+
+END
